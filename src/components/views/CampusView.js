@@ -10,13 +10,18 @@ import { Link } from "react-router-dom";
 const CampusView = (props) => {
   const {campus} = props;
   
+  if(!campus)
+  {
+    return <h1>No campus found!</h1>
+  }
+  
   // Render a single Campus view with list of its students
   return (
     <div>
-      <h1>{campus.name}</h1>
+      <h1>{campus.campusname}</h1>
       <p>{campus.address}</p>
       <p>{campus.description}</p>
-      {campus.students.map( student => {
+      {campus.students.length===0 ? (<h1>No students enrolled in campus!</h1>) : (campus.students.map( (student) => {
         let name = student.firstname + " " + student.lastname;
         return (
           <div key={student.id}>
@@ -25,7 +30,8 @@ const CampusView = (props) => {
             </Link>             
           </div>
         );
-      })}
+      })
+      )}
     </div>
   );
 };
