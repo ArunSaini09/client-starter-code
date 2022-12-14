@@ -18,7 +18,7 @@ class NewCampusContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      campusname: "", 
+      name: "", 
       address: "", 
       imageUrl: "",
       description: "", 
@@ -39,7 +39,7 @@ class NewCampusContainer extends Component {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
     let campus = {
-        campusname: this.state.campusname,
+        name: this.state.name,
         address: this.state.address,
         imageUrl: this.state.imageUrl,
         description: this.state.description
@@ -47,10 +47,10 @@ class NewCampusContainer extends Component {
     
     // Add new student in back-end database
     let newCampus = await this.props.addCampus(campus);
-
+    
     // Update state, and trigger redirect to show the new student
     this.setState({
-        campusname: "", 
+        name: "", 
         address: "", 
         imageUrl: "",
         description: "", 
