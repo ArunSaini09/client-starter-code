@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     color: 'darkblue'
   },
   appBar:{
-    backgroundColor: '#fcb6bb',
+    backgroundColor: 'white',
     shadows: ['none'],
   },
   greeting:{
@@ -50,9 +50,10 @@ const Header = () => {
     <div className={classes.root}>
       <AppBar position="static" elevation={0} className={classes.appBar}>
         <Toolbar>
-          <Typography variant="h6" className={classes.title} color="inherit" >
+         <Typography variant="h6" className={classes.title} color="black" >
             Campus Management System
-          </Typography>
+          </Typography> 
+          
 
           <Link className={classes.links} to={'/'} >
             <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
