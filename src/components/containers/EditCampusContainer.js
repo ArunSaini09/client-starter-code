@@ -40,6 +40,7 @@ class EditCampusContainer extends Component {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
     let campus = {
+        id: this.state.id,
         name: this.state.name,
         address: this.state.address,
         imageUrl: this.state.imageUrl,
