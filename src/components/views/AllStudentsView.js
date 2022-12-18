@@ -14,7 +14,7 @@ const AllStudentsView = (props) => {
     <div>
       <p>There are no students.</p>
       <Link to={`newstudent`}>
-        <button>Add New Student</button>
+        <button className = "btn btn-primary">Add New Student</button>
       </Link>
     </div>
     );
@@ -29,10 +29,11 @@ const AllStudentsView = (props) => {
           let name = student.firstname + " " + student.lastname;
           return (
             <div key={student.id}>
+              <img src = {student.imageUrl} alt="student img" height="200px"/>
               <Link to={`/student/${student.id}`}>
                 <h2>{name}</h2>
               </Link>
-              <button onClick={() => deleteStudent(student.id)}>Delete</button>
+              <button className = "btn btn-danger" onClick={() => deleteStudent(student.id)}>Delete</button>
               <hr/>
             </div>
           );
@@ -40,7 +41,7 @@ const AllStudentsView = (props) => {
       )}
       <br/>
       <Link to={`/newstudent`}>
-        <button>Add New Student</button>
+        <button className="btn btn-primary">Add New Student</button>
       </Link>
       <br/><br/>
     </div>

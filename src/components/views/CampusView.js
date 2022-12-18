@@ -20,10 +20,11 @@ const CampusView = (props) => {
   return (
     <div className="mt-3">
       <img src={campus.imageUrl} alt={campus.name} height="200px"/>
-      <div><button onClick={() => {history.push(`/campus/${campus.id}/edit`)}}>Edit</button></div>
       <h1>{campus.name}</h1>
+      <button className="btn btn-secondary" onClick={() => {history.push(`/campus/${campus.id}/edit`)}}>Edit</button>
       <p>{campus.address}</p>
       <p>{campus.description}</p>
+      <h3>Students:</h3>
       {campus.students.length===0 ? (<h1>No students enrolled in campus!</h1>) : (campus.students.map( (student) => {
         let name = student.firstname + " " + student.lastname;
         return (
