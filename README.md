@@ -2,6 +2,9 @@
 
 This repository is the client (front-end) starter code for Final Project (CRUD Application).
 
+# Group Members:
+Arun Saini - ArunSaini09
+
 ### Use the following steps to set up and run the client (front-end) application on your local machine
 1.	Download the GitHub repository ZIP file to your local machine and unzip it.
 2. Start a terminal (e.g., Git Bash) on your local machine.
