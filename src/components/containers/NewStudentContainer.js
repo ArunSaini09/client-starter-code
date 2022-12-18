@@ -20,7 +20,7 @@ class NewStudentContainer extends Component {
     this.state = {
       firstname: "", 
       lastname: "", 
-      campusId: null, 
+      ...(this.props.location.state ? {campusId: this.props.location.state.campusId}: {campusId:null}), 
       gpa: null,
       redirect: false, 
       redirectId: null
@@ -78,7 +78,8 @@ class NewStudentContainer extends Component {
         <Header />
         <NewStudentView 
           handleChange = {this.handleChange} 
-          handleSubmit={this.handleSubmit}      
+          handleSubmit={this.handleSubmit} 
+          campusId={this.state.campusId}     
         />
       </div>          
     );
