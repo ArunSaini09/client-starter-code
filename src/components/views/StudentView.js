@@ -20,7 +20,7 @@ const StudentView = (props) => {
     <div className = "mt-3">
       <img src={student.imageUrl} alt = "student" height="200px"/>
       <h1>{student.firstname + " " + student.lastname}</h1>
-      <button onClick={() => {history.push('/student/${student.id}/edit')}}>Edit</button>
+      <button onClick={() => {history.push(`/student/${student.id}/edit`)}}>Edit</button>
       <h3>{student.email}</h3>
       {student.gpa ? (<h3>GPA: {student.gpa}</h3>):(<h3>GPA: N/A</h3>)}
       {student.campus ? (<Link to ={`/campus/${student.campus.id}`}><h3>Attends: {student.campus.name}</h3></Link>) :

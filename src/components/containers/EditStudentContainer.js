@@ -13,7 +13,7 @@ import { Redirect } from 'react-router-dom';
 import EditStudentView from '../views/EditStudentView';
 import { editStudentThunk, fetchStudentThunk } from '../../store/thunks';
 
-class EditCampusContainer extends Component {
+class EditStudentContainer extends Component {
   // Initialize state
   constructor(props){
     super(props);
