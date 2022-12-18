@@ -56,6 +56,11 @@ const NewCampusView = (props) => {
             <br/>
             <br/>
 
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>ImageUrl: </label>
+            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} placeholder="(optional)"/>
+            <br/>
+            <br/>
+
             <label style={{color:'#11153e', fontWeight: 'bold'}}>School Address: </label>
             <input type="text" name="address" onChange={(e) => handleChange(e)} required/>
             <br/>

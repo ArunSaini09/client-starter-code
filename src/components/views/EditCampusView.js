@@ -38,6 +38,11 @@ const EditCampusView = (props) => {
   const {campus, handleChange, handleSubmit } = props;
   const classes = useStyles();
 
+  if(!campus.id)
+  {
+    return (<h1>No campus with this id</h1>)
+  }
+
   // Render a New Campus view with an input form
   return (
     <div>
@@ -47,12 +52,12 @@ const EditCampusView = (props) => {
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
             <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-              Edit a Campus
+              Edit {campus.name}
             </Typography>
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
             <label style={{color:'#11153e', fontWeight: 'bold'}}>imageUrl: </label>
-            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} value = {campus.imageUrl} required />
+            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} value = {campus.imageUrl}  />
             <br/>
             <br/>
 

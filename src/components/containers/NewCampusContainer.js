@@ -41,7 +41,8 @@ class NewCampusContainer extends Component {
     let campus = {
         name: this.state.name,
         address: this.state.address,
-        imageUrl: this.state.imageUrl,
+        ...(this.state.imageUrl === "" ? {imageUrl: "https://resizer-awani.eco.astro.com.my/tr:w-177,h-100,q-100,f-auto/http://img.astroawani.com/2013-05/71369903859_950x600.jpg"}
+        :{imageUrl:this.state.imageUrl}),
         description: this.state.description
     };
     

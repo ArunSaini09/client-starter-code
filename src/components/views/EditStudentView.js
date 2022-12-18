@@ -1,8 +1,8 @@
 /*==================================================
-NewStudentView.js
+NewCampusView.js
 
 The Views component is responsible for rendering web page with data provided by the corresponding Container component.
-It constructs a React component to display the new student page.
+It constructs a React component to display the new campus page.
 ================================================== */
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -34,50 +34,56 @@ const useStyles = makeStyles( () => ({
   },
 }));
 
-const NewStudentView = (props) => {
-  const {handleChange, handleSubmit } = props;
+const EditStudentView = (props) => {
+  const {student, handleChange, handleSubmit } = props;
   const classes = useStyles();
 
-  // Render a New Student view with an input form
+
+  if(!student.id)
+  {
+    return (<h1>No student with this id</h1>)
+  }
+
+  // Render a New Campus view with an input form
   return (
     <div>
-      <h1>New Student</h1>
+      <h1>Edit Student</h1>
 
       <div className={classes.root}>
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
             <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-              Add a Student
+              Edit {student.firstname}
             </Typography>
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
-            <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-            <input type="text" name="firstname" onChange ={(e) => handleChange(e)} required/>
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
+            <input type="text" name="firstname" onChange={(e) => handleChange(e)} value = {student.firstname} required />
             <br/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-            <input type="text" name="lastname" onChange={(e) => handleChange(e)} required/>
+            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
+            <input type="text" name="lastname" onChange ={(e) => handleChange(e)}  value = {student.lastname} required />
             <br/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>ImageUrl: </label>
-            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} placeholder="(optional)"/>
-            <br/>
-            <br/>
-
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Id: </label>
-            <input type="number" name="campusId" onChange={(e) => handleChange(e)}  defaultValue={props.campusId} required  step="1"/>
+            <label style= {{color:'#11153e', fontWeight: 'bold'}}>ImageURL: </label>
+            <input type="text" name="imageUrl" onChange ={(e) => handleChange(e)}  value = {student.imageUrl} required />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
-            <input type="email" name="email" onChange={(e) => handleChange(e)} required/>
+            <input type="text" name="email" onChange={(e) => handleChange(e)} value = {student.email} required/>
             <br/>
             <br/>
 
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus ID: </label>
+            <input type="number" name="campusId" onChange={(e) => handleChange(e)} value = {student.campusId}  step ="1" min="1"  required />
+            <br/>
+            <br/>
+            
             <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
-            <input type="number" name="gpa" onChange={(e) => handleChange(e)} min = "0" max ="4" step = "0.01"required/>
+            <input type="number" name="gpa" onChange={(e) => handleChange(e)} value = {student.gpa}  step=".01" min ="0" max= "4" required />
             <br/>
             <br/>
 
@@ -93,4 +99,4 @@ const NewStudentView = (props) => {
   )
 }
 
-export default NewStudentView;
+export default EditStudentView;

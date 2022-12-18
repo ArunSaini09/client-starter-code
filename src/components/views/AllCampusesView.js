@@ -10,30 +10,37 @@ import { Link } from "react-router-dom";
 const AllCampusesView = (props) => {
   // If there is no campus, display a message.
   if (!props.allCampuses.length) {
-    return <div>There are no campuses.</div>;
+    return (
+    <>
+      <h1>There are no campuses.</h1>
+      <Link to={`/newcampus`}>
+          <button className="btn btn-primary">Add New Campus</button>
+      </Link>
+    </>
+    )
   }
 
   // If there is at least one campus, render All Campuses view 
   return (
-    <div>
+    <div className="bg-light">
       <h1>All Campuses</h1>
 
       {props.allCampuses.map((campus) => (
         <div key={campus.id}>
-          <img src={campus.imageUrl} alt={campus.name} height="200px"/>
-          <Link to={`/campus/${campus.id}`}>
-            <h2>{campus.name}</h2>
-          </Link>
-          <h4>campus id: {campus.id}</h4>
-          <p>{campus.address}</p>
-          <p>{campus.description}</p>
-          <button onClick={() => props.deleteCampus(campus.id)}>Delete</button>
-          <hr/>
+            <img className="rounded" src={campus.imageUrl} alt={campus.name} height="200px"/>
+            <Link to={`/campus/${campus.id}`}>
+              <h2>{campus.name}</h2>
+            </Link>
+            <h4>campus id: {campus.id}</h4>
+            <p>{campus.address}</p>
+            <p>{campus.description}</p>
+            <button className="btn btn-danger" onClick={() => props.deleteCampus(campus.id)}>Delete</button>
+            <hr/>
         </div>
       ))}
       <br/>
       <Link to={`/newcampus`}>
-        <button>Add New Campus</button>
+        <button className="btn btn-primary">Add New Campus</button>
       </Link>
       <br/><br/>
     </div>
