@@ -38,6 +38,11 @@ const EditCampusView = (props) => {
   const {campus, handleChange, handleSubmit } = props;
   const classes = useStyles();
 
+  if(!campus.id)
+  {
+    return (<h1>No campus with this id</h1>)
+  }
+
   // Render a New Campus view with an input form
   return (
     <div>

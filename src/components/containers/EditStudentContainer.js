@@ -20,6 +20,7 @@ class EditStudentContainer extends Component {
     this.state = {
       firstname: "", 
       lastname: "",
+      imageUrl: "",
       campusId: null,
       gpa: null,
       redirect: false, 
@@ -44,6 +45,7 @@ class EditStudentContainer extends Component {
         firstname: this.state.firstname,
         lastname: this.state.lastname,
         email: this.state.email,
+        imageUrl: this.state.imageUrl,
         ...(this.state.campusId !== "" ? {campusId: this.state.campusId} : {campusId: null}),
         ...(this.state.gpa !== "" ? {gpa: this.state.gpa} : {gpa:null})
     };

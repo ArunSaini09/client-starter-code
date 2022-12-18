@@ -38,6 +38,12 @@ const EditStudentView = (props) => {
   const {student, handleChange, handleSubmit } = props;
   const classes = useStyles();
 
+
+  if(!student.id)
+  {
+    return (<h1>No student with this id</h1>)
+  }
+
   // Render a New Campus view with an input form
   return (
     <div>
@@ -47,7 +53,7 @@ const EditStudentView = (props) => {
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
             <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-              Edit a Student
+              Edit {student.firstname}
             </Typography>
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
@@ -58,6 +64,11 @@ const EditStudentView = (props) => {
 
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
             <input type="text" name="lastname" onChange ={(e) => handleChange(e)}  value = {student.lastname} required />
+            <br/>
+            <br/>
+
+            <label style= {{color:'#11153e', fontWeight: 'bold'}}>ImageURL: </label>
+            <input type="text" name="imageUrl" onChange ={(e) => handleChange(e)}  value = {student.imageUrl} required />
             <br/>
             <br/>
 

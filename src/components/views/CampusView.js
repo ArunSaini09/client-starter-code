@@ -13,7 +13,7 @@ const CampusView = (props) => {
   
   if(!campus)
   {
-    return <h1>No campus found!</h1>
+    return <h1>No campus with this id found!</h1>
   }
   
   // Render a single Campus view with list of its students

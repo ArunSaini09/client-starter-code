@@ -12,7 +12,7 @@ const StudentView = (props) => {
 
   if(!student)
   {
-    return (<h1>No students found</h1>)
+    return (<h1>No student with this id found</h1>)
   }
 
   // Render a single Student view 
