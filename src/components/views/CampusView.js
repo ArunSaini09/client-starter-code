@@ -28,10 +28,15 @@ const CampusView = (props) => {
       {campus.students.length===0 ? (<h1>No students enrolled in campus!</h1>) : (campus.students.map( (student) => {
         let name = student.firstname + " " + student.lastname;
         return (
-          <div key={student.id}>
-            <Link to={`/student/${student.id}`}>
-              <h2>{name}</h2>
-            </Link>             
+          <div key={student.id} className ="row">
+            <div className="col">
+              <Link to={`/student/${student.id}`}>
+                <h2>{name}</h2>
+              </Link>
+            </div>
+            <div className="col">
+              <button className="btn btn-danger" onClick={() => {props.removeStudent(student.id)}}>Unenroll</button>   
+            </div>        
           </div>
         );
       })
