@@ -21,12 +21,12 @@ const CampusView = (props) => {
     <div className="mt-3">
       <img src={campus.imageUrl} alt={campus.name} height="200px"/>
       <h1>{campus.name}</h1>
+      <p>{campus.address}</p>
+      <p>{campus.description}</p>
       <button className="btn btn-secondary" onClick={() => {history.push(`/campus/${campus.id}/edit`)}}>Edit</button>
       <Link to={`/campuses`}>
         <button className="btn btn-danger" onClick={() => props.deleteCampus(campus.id)}>Delete</button>
       </Link>
-      <p>{campus.address}</p>
-      <p>{campus.description}</p>
       <h3>Students:</h3>
       {campus.students.length===0 ? (<h1>No students enrolled in campus!</h1>) : (campus.students.map( (student) => {
         let name = student.firstname + " " + student.lastname;
