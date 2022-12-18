@@ -49,6 +49,7 @@ const HomePageView = () => {
           <div className="col">
             <div className="card-body">
               <h1>Campuses</h1>
+              <img  className = "mb-3" src="https://www.slashfilm.com/wp/wp-content/images/ZZ48055A88.jpg" alt="students" height = "400px" width="400px"/>
               <Link className={classes.links} to={'/campuses'} >
                 <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
                   View Campuses
@@ -59,6 +60,7 @@ const HomePageView = () => {
           <div className="col">
             <div className="card-body">
               <h1>Students</h1>
+              <img  className = "mb-3" src="https://ichef.bbci.co.uk/images/ic/640x360/p0915n36.jpg" alt="students" height = "400px" width="400px"/>
               <Link className={classes.links} to={'/students'} >
                 <Button variant="contained" color="primary">
                   View Students
