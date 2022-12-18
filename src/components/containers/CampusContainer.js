@@ -19,6 +19,17 @@ class CampusContainer extends Component {
     this.props.fetchCampus(this.props.match.params.id);
   }
 
+  enrollStudent = async id => {
+    let student = {
+      id: id,
+      campusId: this.props.campus.id
+    }
+
+    this.props.editStudent(student);
+    //auto refresh
+    this.props.fetchCampus(this.props.match.params.id);
+  }
+
   removeStudent = async id => {
     let student = {
       id: id,
@@ -26,6 +37,7 @@ class CampusContainer extends Component {
     }
 
     this.props.editStudent(student);
+    //auto refresh
     this.props.fetchCampus(this.props.match.params.id);
   }
 
@@ -35,7 +47,7 @@ class CampusContainer extends Component {
     return (
       <div>
         <Header />
-        <CampusView campus={this.props.campus} removeStudent = {this.removeStudent} />
+        <CampusView campus={this.props.campus} removeStudent = {this.removeStudent} enrollStudent={this.enrollStudent} />
       </div>
     );
   }

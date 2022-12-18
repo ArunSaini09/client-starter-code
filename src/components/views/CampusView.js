@@ -41,6 +41,7 @@ const CampusView = (props) => {
         );
       })
       )}
+      <button className="btn btn-primary" onClick={() => {history.push('/newstudent',{campusId:campus.id})}}>Enroll students</button>
     </div>
   );
 };

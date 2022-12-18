@@ -57,7 +57,7 @@ const EditCampusView = (props) => {
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
             <label style={{color:'#11153e', fontWeight: 'bold'}}>imageUrl: </label>
-            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} value = {campus.imageUrl} required />
+            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} value = {campus.imageUrl}  />
             <br/>
             <br/>
 
